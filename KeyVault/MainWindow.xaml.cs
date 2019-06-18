@@ -62,15 +62,18 @@ namespace KeyVault
                 case ClipState.URL:
                     Clipboard.SetText(LblURL.Content.ToString());
                     LblURL.Background = Brushes.GreenYellow;
+                    LblCount.Content = "Copied!";
                     break;
                 case ClipState.USER:
                     Clipboard.SetText(LblUser.Content.ToString());
                     LblUser.Background = Brushes.GreenYellow;
+                    LblCount.Content = "Copied!!";
                     break;
                 case ClipState.SECRET:
                     string raw = SecretHelper.Decrypt(LblPswd.Content.ToString());
                     Clipboard.SetText(raw);
                     LblPswd.Background = Brushes.OrangeRed;
+                    LblCount.Content = "Copied!!!";
                     break;
                 case ClipState.CLEANUP:
                     LblCount.Content = "Cleared!";
@@ -168,6 +171,9 @@ namespace KeyVault
                 var label = (Label)sender;
                 switch (label.Name)
                 {
+                    case "LblName":
+                        clipFlow(ClipState.CLEANUP);
+                        break;
                     case "LblURL":
                         clipFlow(ClipState.URL);
                         break;
@@ -177,8 +183,7 @@ namespace KeyVault
                     case "LblPswd":
                         clipFlow(ClipState.SECRET);
                         break;
-                }
-                
+                }                
             }
         }
 

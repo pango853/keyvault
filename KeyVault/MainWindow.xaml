@@ -23,7 +23,8 @@
                  KeyDown="OnKeyDownHandler"
                  TextChanged="OnTextChangedHandler"
                  IsTabStop="True"/>
-        <Label x:Name="LblName" Content="name" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="64" FontSize="12" FontStyle="Italic"/>
+        <Label x:Name="LblName" Content="name" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="64" FontSize="12" FontStyle="Italic"
+               MouseDoubleClick="OnLabelDoubleClick"/>
         <Label x:Name="LblUser" Content="user"
                HorizontalAlignment="Left" Margin="64,0,0,0" VerticalAlignment="Top" Width="32" FontSize="12"
                MouseDoubleClick="OnLabelDoubleClick"/>
