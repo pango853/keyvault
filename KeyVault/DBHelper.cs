@@ -14,7 +14,7 @@ namespace KeyVault
 
         public static void InitDB()
         {
-            SQLiteConnection conn = new SQLiteConnection(String.Format("Data Source={0};Version=3;", MainWindow.DB_PATH));
+            SQLiteConnection conn = new SQLiteConnection(String.Format("Data Source={0};Version=3;", App.DB_PATH));
             conn.Open();
 
             using (DbCommand command = conn.CreateCommand())
@@ -48,7 +48,7 @@ namespace KeyVault
 
         public static void AddRecord(string name, string url, string user, string pswd, string note)
         {
-            SQLiteConnection conn = new SQLiteConnection(String.Format("Data Source={0};Version=3;", MainWindow.DB_PATH));
+            SQLiteConnection conn = new SQLiteConnection(String.Format("Data Source={0};Version=3;", App.DB_PATH));
             conn.Open();
 
             using (DbCommand command = conn.CreateCommand())
@@ -93,7 +93,7 @@ namespace KeyVault
         public static int Count()
         {
             int total = 0;
-            var connectionSb = new SQLiteConnectionStringBuilder { DataSource = MainWindow.DB_PATH, Version = 3 };
+            var connectionSb = new SQLiteConnectionStringBuilder { DataSource = App.DB_PATH, Version = 3 };
             using (var conn = new SQLiteConnection(connectionSb.ToString()))
             {
                 conn.Open();
@@ -114,7 +114,7 @@ namespace KeyVault
             if (String.IsNullOrWhiteSpace(pattern)) return Count();
 
             int count = 0;
-            var connectionSb = new SQLiteConnectionStringBuilder { DataSource = MainWindow.DB_PATH, Version = 3 };
+            var connectionSb = new SQLiteConnectionStringBuilder { DataSource = App.DB_PATH, Version = 3 };
             using (var conn = new SQLiteConnection(connectionSb.ToString()))
             {
                 conn.Open();
@@ -139,7 +139,7 @@ namespace KeyVault
             var tuples = new List<string[]>();
             if ( pattern.Length == 0 || pattern == null) return tuples;
 
-            var connectionSb = new SQLiteConnectionStringBuilder { DataSource = MainWindow.DB_PATH, Version = 3 };
+            var connectionSb = new SQLiteConnectionStringBuilder { DataSource = App.DB_PATH, Version = 3 };
             using (var conn = new SQLiteConnection(connectionSb.ToString()))
             {
                 conn.Open();

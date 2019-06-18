@@ -12,7 +12,7 @@ namespace KeyVault
 
         public static string Encrypt(string str)
         {
-            var salt = MainWindow.SALT;
+            var salt = App.SALT;
             if (!String.IsNullOrWhiteSpace(salt))
                 return Cipher.Encrypt(str, salt);
             else
@@ -26,7 +26,7 @@ namespace KeyVault
 
         public static string Decrypt(string str64)
         {
-            var salt = MainWindow.SALT;
+            var salt = App.SALT;
             if (!String.IsNullOrWhiteSpace(salt))
                return Cipher.Decrypt(str64, salt);
             else

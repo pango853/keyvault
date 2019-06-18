@@ -8,14 +8,16 @@
         ResizeMode="NoResize"
         FocusManager.FocusedElement="{Binding ElementName=TxtInput}"
         Icon="E:\WS\dotnet\KeyVault\Resources\icon64.png"
+        Background="Coral"
+        BorderBrush="DarkRed"
         Title="MainWindow" Height="40" Width="480" HorizontalAlignment="Left" VerticalAlignment="Bottom" Opacity="0.64" WindowStyle="None" AllowsTransparency="True" Topmost="True">
     <Window.InputBindings>
         <!-- KeyBinding Key="Escape" Command="{x:Static local:CloseThisWindowCommand.Instance}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/ -->
     </Window.InputBindings>
     <Grid>
-        <Button Content="&#215;" Margin="0" Width="12" HorizontalAlignment="Right" VerticalAlignment="Stretch" 
+        <Button Content="&#215;" Margin="0" Width="16" HorizontalAlignment="Right" VerticalAlignment="Stretch" 
                 MinHeight="24" IsCancel="False" Focusable="False" Click="OnClickClose"/>
-        <Label x:Name="LblCount" Content="(0)" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,12,0" FontSize="12"/>
+        <Label x:Name="LblCount" Content="(0)" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,16,0" FontSize="10.5"/>
         <TextBox x:Name="TxtInput" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Bottom" MinWidth="320" Focusable="True"
                  IsHitTestVisible="True" Text="{Binding SearchCriteria}"
                  KeyDown="OnKeyDownHandler"

@@ -24,9 +24,6 @@ namespace KeyVault
     /// </summary>
     public partial class MainWindow : Window
     {
-        internal static string SALT = "";
-        internal static string DB_PATH = "keyvault.db";
-
         private ClipState clipState = ClipState.INIT;
 
         public MainWindow()
@@ -36,18 +33,6 @@ namespace KeyVault
             //this.PreviewKeyDown += new KeyEventHandler(HandleKeyInput);
 
             LblCount.Content = String.Format("({0:D})", DBHelper.Count());
-
-            // Need to Project > Add Reference > Check System.Confiration.dll
-            string salt = ConfigurationManager.AppSettings["SALT"];
-            if(salt != null)
-            {
-                MainWindow.SALT = salt;
-            }
-            string dbpath = ConfigurationManager.AppSettings["DB_PATH"];
-            if (dbpath != null)
-            {
-                MainWindow.DB_PATH = dbpath;
-            }
         }
 
         private void clipFlow(ClipState nextState)

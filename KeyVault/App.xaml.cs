@@ -21,6 +21,9 @@ namespace KeyVault
         private const string MUTEXID = @"Local\{927c35c9-d26c-4aba-8358-ab801579f843}";
         private Mutex _mutex;
 
+        internal static string SALT = "";
+        internal static string DB_PATH = "keyvault.db";
+
         public App()
         {
             bool isSingleton;
@@ -32,6 +35,18 @@ namespace KeyVault
             }
             else
             {
+                // Need to Project > Add Reference > Check System.Confiration.dll
+                string salt = ConfigurationManager.AppSettings["SALT"];
+                if (salt != null)
+                {
+                    App.SALT = salt;
+                }
+                string dbpath = ConfigurationManager.AppSettings["DB_PATH"];
+                if (dbpath != null)
+                {
+                    App.DB_PATH = dbpath;
+                }
+
                 DBHelper.InitDB();
             }
         }
