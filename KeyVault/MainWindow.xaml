@@ -5,8 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeyVault"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        FocusManager.FocusedElement="{Binding ElementName=TxtInput}"
+        Icon="E:\WS\dotnet\KeyVault\Resources\icon64.png"
+        Title="MainWindow" Height="40" Width="480" HorizontalAlignment="Left" VerticalAlignment="Bottom" Opacity="0.64" WindowStyle="None" AllowsTransparency="True" Topmost="True">
+    <Window.InputBindings>
+        <!-- KeyBinding Key="Escape" Command="{x:Static local:CloseThisWindowCommand.Instance}" CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"/ -->
+    </Window.InputBindings>
     <Grid>
-        
+        <Button Content="&#215;" Margin="0" Width="12" HorizontalAlignment="Right" VerticalAlignment="Stretch" 
+                MinHeight="24" IsCancel="False" Focusable="False" Click="OnClickClose"/>
+        <Label x:Name="LblCount" Content="(0)" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,12,0" FontSize="12"/>
+        <TextBox x:Name="TxtInput" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Bottom" MinWidth="320" Focusable="True"
+                 IsHitTestVisible="True" Text="{Binding SearchCriteria}"
+                 KeyDown="OnKeyDownHandler"
+                 TextChanged="OnTextChangedHandler"
+                 IsTabStop="True"/>
+        <Label x:Name="LblName" Content="name" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="64" FontSize="12" FontStyle="Italic"/>
+        <Label x:Name="LblUser" Content="user"
+               HorizontalAlignment="Left" Margin="64,0,0,0" VerticalAlignment="Top" Width="32" FontSize="12"
+               MouseDoubleClick="OnLabelDoubleClick"/>
+        <Label Content=":" HorizontalAlignment="Left" Margin="96,0,0,0" VerticalAlignment="Top" Width="20" FontSize="12" FontWeight="Bold"/>
+        <Label x:Name="LblPswd" Content="password" HorizontalAlignment="Left" Margin="116,0,0,0" VerticalAlignment="Top" Width="64" FontSize="12"
+               MouseDoubleClick="OnLabelDoubleClick"/>
+        <Label Content="@" HorizontalAlignment="Left" Margin="180,0,0,0" VerticalAlignment="Top" Width="20" FontSize="12" FontWeight="Bold"/>
+        <Label x:Name="LblURL" Content="url" HorizontalAlignment="Left" Margin="200,0,0,0" VerticalAlignment="Top" Width="240" FontSize="12"
+               MouseDoubleClick="OnLabelDoubleClick"/>
     </Grid>
 </Window>

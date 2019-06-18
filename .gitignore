@@ -65,6 +65,7 @@ dlldata.c
 *.pidb
 *.svclog
 *.scc
+*_wpftmp.csproj
 
 # Chutzpah Test files
 _Chutzpah*
@@ -206,3 +207,4 @@ _dependentPackages/
 
 # Visual Studio Code
 .vscode/
+lib/
