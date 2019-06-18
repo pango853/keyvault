@@ -19,10 +19,10 @@
                 MinHeight="24" IsCancel="False" Focusable="False" Click="OnClickClose"/>
         <Label x:Name="LblCount" Content="(0)" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,16,0" FontSize="10.5"/>
         <TextBox x:Name="TxtInput" HorizontalAlignment="Left" Margin="0" TextWrapping="Wrap" VerticalAlignment="Bottom" MinWidth="320" Focusable="True"
-                 IsHitTestVisible="True" Text="{Binding SearchCriteria}"
                  KeyDown="OnKeyDownHandler"
                  TextChanged="OnTextChangedHandler"
                  IsTabStop="True"/>
+        <!-- IsHitTestVisible="True" Text="{Binding SearchCriteria}" -->
         <Label x:Name="LblName" Content="name" HorizontalAlignment="Left" Margin="0" VerticalAlignment="Top" Width="64" FontSize="12" FontStyle="Italic"
                MouseDoubleClick="OnLabelDoubleClick"/>
         <Label x:Name="LblUser" Content="user"

@@ -33,6 +33,8 @@ namespace KeyVault
             //this.PreviewKeyDown += new KeyEventHandler(HandleKeyInput);
 
             LblCount.Content = String.Format("({0:D})", DBHelper.Count());
+            if (!String.IsNullOrEmpty(App.STARTUP_ARGS))
+                TxtInput.Text = App.STARTUP_ARGS;
         }
 
         private void clipFlow(ClipState nextState)

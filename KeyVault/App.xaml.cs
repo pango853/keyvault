@@ -24,6 +24,8 @@ namespace KeyVault
         internal static string SALT = "";
         internal static string DB_PATH = "keyvault.db";
 
+        internal static string STARTUP_ARGS= "";
+
         public App()
         {
             bool isSingleton;
@@ -53,22 +55,24 @@ namespace KeyVault
 
         void App_Startup(object sender, StartupEventArgs e)
         {
-            // Application is running
-            // Process command line args
-            //bool startMinimized = false;
-            //for (int i = 0; i != e.Args.Length; ++i)
-            //{
-            //    if (e.Args[i] == "/StartMinimized")
-            //    {
-            //        startMinimized = true;
-            //    }
-            //}
+            STARTUP_ARGS = String.Join(" ", e.Args);
 
-            //using (var appLock = new SingleInstanceApplicationLock())
-            //{
+                // Application is running
+                // Process command line args
+                //bool startMinimized = false;
+                //for (int i = 0; i != e.Args.Length; ++i)
+                //{
+                //    if (e.Args[i] == "/StartMinimized")
+                //    {
+                //        startMinimized = true;
+                //    }
+                //}
+
+                //using (var appLock = new SingleInstanceApplicationLock())
+                //{
                 //if (!appLock.TryAcquireExclusiveLock()) {
                 //    MessageBox.Show("test");
-                    //this.Shutdown();
+                //this.Shutdown();
                 //    Environment.Exit(1);
                 //}
 
