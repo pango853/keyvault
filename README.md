@@ -1,7 +1,7 @@
-KeyVault is an easy to use, free everywhere offline pasword manager. It implemented with .NET Framework.
+KeyVault is an easy & free to use, offline pasword manager. It is implemented with .NET Framework.
 
 
-# How-To Use?
+# How-To
 
 ## Configuration
 
@@ -24,6 +24,8 @@ And they press Enter to copy the URL, username and password one by one.
 
 
 # TODO
-[] Show a list and let user to choose when more than one matches are found.
-[] Allow minimizing.
-[] Show tooltips.
+- [ ] Show a list and let user to choose when more than one matches are found.
+- [ ] Allow minimizing.
+- [ ] Show tooltips.
+- [ ] **URGENT** Check .NET Framework compatibility
+- [ ] **URGENT** Package missing in release 0.2.0
